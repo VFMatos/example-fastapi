@@ -1,6 +1,12 @@
 __pycache__
 venv/
 .env
+
+# DATABASE
 *.db
+
+# MACOS
 .DS_Store
+
+# IDEA
 .idea
