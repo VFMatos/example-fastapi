@@ -10,3 +10,4 @@ venv/
 
 # IDEA
 .idea
+/.pytest_cache/
