@@ -1,9 +1,9 @@
-name: Build and Deploy Code
+name: Build And Deploy Code
 
 on: [push, pull_request]
 
 jobs:
-  job1:
+  Build:
     environment:
       name: Testing
     env:
@@ -27,3 +27,13 @@ jobs:
         run: |
           pip install pytest
           pytest
+  Deploy:
+    environment:
+      name: Production
+    runs-on: ubuntu-latest
+    needs: [Build]
+    steps:
+      - name: Pull Git Repo
+        uses: actions/checkout@v2
+      - name: Deploy
+        run: echo "Deployed with success"
